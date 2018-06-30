@@ -10,8 +10,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/css/index.css" rel="stylesheet">
     <link href="./assets/css/form.css" rel="stylesheet">
-    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -35,10 +35,11 @@
         </nav>
     </header>
     <main role="main">
+        <!-- Carousel -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="first-slide" src="<ImAGE HERE>" alt="First slide">
+                    <!-- <img class="first-slide" src="<ImAGE HERE>" alt="First slide"> -->
                     <div class="container">
                         <div class="carousel-caption text-left">
                             <h1>Schedule an Appointment.</h1>
@@ -48,10 +49,12 @@
                 </div>
             </div>
         </div>
+        <!-- Container w/ Form -->
         <div class="container marketing">
+            <!-- Section 1 -->
             <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Client Info</h4>
                 <form class="needs-validation" novalidate>
+                    <h4 class="mb-3">Client Info</h4>
                     <div class="row">
                         <div class="col-md-4 mb-4">
                             <label for="firstName">First name</label>
@@ -75,76 +78,69 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                        <label>Gender</label>
-                        <div class="form-check col-md-4 mb-4">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
+                    <div class="row" id="genderRow">
+                        <div class="col-md-2">
+                            <label>Gender</label>
+                        </div>
+                        <div class="form-check col-md-3 mb-3">
+                            <input name="gender" class="form-check-input" type="radio" value="male" id="maleGender">
+                            <label class="form-check-label" for="maleGender">
                                 Male
                             </label>
                         </div>
-                        <div class="form-check col-md-4 mb-4">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                            <label class="form-check-label" for="defaultCheck2">
+                        <div class="form-check col-md-3 mb-3">
+                            <input name="gender" class="form-check-input" type="radio" value="female" id="femaleGender">
+                            <label class="form-check-label" for="femaleGender">
                                 Female
                             </label>
                         </div>
-                        <div class="form-check col-md-4 mb-4">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                            <label class="form-check-label" for="defaultCheck3">
+                        <div class="form-check col-md-3 mb-4">
+                            <input name="gender" class="form-check-input" type="radio" value="other" id="otherGender">
+                            <label class="form-check-label" for="otherGender">
                                 Other
                             </label>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-5 mb-3">
                             <label for="phoneNumber">Phone Number</label>
-                            <input type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" placeholder="(123) 456-7890">
+                            <input type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" placeholder="(123) 456-7890" id="phoneNumber">
                             <div class="invalid-feedback">
                                 Valid phone number is required.
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        <div class="col-md-7 mb-3">
+                            <label for="emailAdress">Email</label>
+                            <input type="email" class="form-control" id="emailAdress" placeholder="you@example.com">
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                     </div>
-
                     <div class="mb-3">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                        <label for="addressOne">Address</label>
+                        <input type="text" class="form-control" id="addressOne" placeholder="1234 Main St" required>
                         <div class="invalid-feedback">
                             Please enter your shipping address.
                         </div>
                     </div>
-
                     <div class="mb-3">
-                        <label for="address2">Address 2
+                        <label for="addressTwo">Address 2
                             <span class="text-muted">(Optional)</span>
                         </label>
-                        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                        <input type="text" class="form-control" id="addressTwo" placeholder="Apartment or suite">
                     </div>
-
                     <div class="row">
                         <div class="col-md-5 mb-3">
                             <label for="country">Country</label>
-                            <select class="custom-select d-block w-100" id="country" required>
-                                <option value="">Choose...</option>
-                                <option>United States</option>
-                            </select>
+                            <select class="custom-select bfh-countries" data-country="US" id="country"></select>
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="state">State</label>
-                            <select class="custom-select d-block w-100" id="state" required>
-                                <option value="">Choose...</option>
-                                <option>California</option>
-                            </select>
+                            <select class="custom-select d-block w-100 bfh-states" data-country="US" data-state="CA" id="state" required></select>
                             <div class="invalid-feedback">
                                 Please provide a valid state.
                             </div>
@@ -157,18 +153,309 @@
                             </div>
                         </div>
                     </div>
-                    <hr class="mb-4">
-                    <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
                 </form>
             </div>
-            <div class="calendar">
-                <h4 class="mb-3">Check my Availability!</h1>
-                <div class="iframe-wrapper">
-                    <iframe src="https://calendar.google.com/calendar/embed?src=girthtanin%40gmail.com&amp;ctz=America%2FNew_York" class="cal-iframe" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+            <!-- Section 2 -->
+            <!--Health Section -->
+            <hr class="mb-4">
+            <h4 class="mb-3">Health Info</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Have you ever had a therapeutic massage before?</label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        No
+                    </label>
+                </div>
+                <div class="form-group col-md-4">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="How often?"></textarea>
                 </div>
             </div>
-        </div>   
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Are you currently under the care of a physician?</label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        No
+                    </label>
+                </div>
+                <div class="form-group col-md-4">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Please explain"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Are you currently taking any medications?</label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        No
+                    </label>
+                </div>
+                <div class="form-group col-md-4">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="List current medications"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Have you had any surgeries?</label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        No
+                    </label>
+                </div>
+                <div class="form-group col-md-4">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Please describe"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Have you had any injuries or accidents?</label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        No
+                    </label>
+                </div>
+                <div class="form-group col-md-4">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Please describe"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Are you pregnant or trying to become pregnant?</label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check col-md-1 mb-1">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        No
+                    </label>
+                </div>
+                <div class="form-group col-md-4">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Which trimester and any associated conditions?"></textarea>
+                </div>
+            </div>
+            <div>
+                <form method="get" action="projects.php" role="form">
+                    <input type="hidden" name="action" value="projectsFind">
+
+                    <div class="form-group row">
+                        <label class="col-md-12 col-form-label">In order to provide you with appropriate and client centered massage, we need an accurate health
+                            history. Please check any boxes below that apply to you.</label>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-2">Selections</div>
+                        <div class="col-sm-10">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Hot Food">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Allergies </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Retail">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Arthritis</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Affordable">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Blood clots (DVT, phlebitis) </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Canteen">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Cancer or tumors </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="At Home">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Congestive heart failure </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Residential">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Diabetes</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Hospitality">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Fibromyalgia </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Supermarket">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Heart attack </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Education">
+                                <label class="form-check-label" for="gridCheck1">
+                                    High blood pressure </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Student">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Immune system deficiency </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Leisure">
+                                <label class="form-check-label" for="gridCheck1">
+                                    infectious disease </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Exhibition">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Kidney/urinary problem </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Health">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Numbness or tingling</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Seniors">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Osteoporosis </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Restaurant">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Other cardiovascular disease </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Standard">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Respiratory problems </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Industry">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Skin conditions </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Social">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Stroke </label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="footTypes" value="Recycle">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Other conditions </label>
+                            </div>
+                            <div class=" col-md-12">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Please explain"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            </div>
+            <hr class="mb-4">
+            <p>I hereby acknowledge that all of the above information is correct and that if I have any changes in my health
+                I will let my practitioner know.</p>
+            <p>The massage/bodywork received today is provided for the purpose of relaxation and relief of muscular tension
+                and that a written doctor’s referral is required to practice on individuals with any acute or complex medical
+                conditions.
+            </p>
+            <p>Your therapist is permitted to receive gratuity beyond full payment of services provided.</p>
+            <p>Living Water Massage reserves the right to refuse massage treatment to any individual for any reason, including
+                inappropriate behavior, illicit or sexually suggestive remarks, abusive or threatening behavior, medical
+                contraindications, repetitive cancellations, tardiness, ethical reasons, or if the individual is, or appears
+                to be, under the influence of alcohol or illegal drugs. Any actions that could reasonably be seen as sexual
+                in nature, including sexual references, offensive language, or similar acts, will not be tolerated. Any Living
+                Water Massage staff or therapist has the right to end the session immediately if any of these or other actions
+                occur, and the client will still be responsible for the full payment of the fee.</p>
+            <p>If the therapist is not acting in alignment with these expectations, and you feel comfortable speaking directly
+                with the therapist, please speak to him/her immediately, so that the therapist may learn from the experience.
+                If you are uncomfortable speaking directly with the therapist, report any concern to Living Water Massage’s
+                Studio Manager. You understand and voluntarily accept any risks of which you have been advised associated
+                with your massage, or from any use of Living Water Massage’s facilities, and hereby release Living Water
+                Massage and its employees, practitioners, agents, parent company (owners) or other related entity, and insurers
+                from all liability for any injury, including, without limitation, personal, bodily or mental injury, economic
+                loss or any damage to you resulting therefrom. You further release all of the foregoing personnel and entities
+                from all liability arising from any such injury or damage resulting from your failure to disclose and pre-existing
+                condition or failure to inform your practitioner of any discomfort (whether physical or otherwise) or dissatisfaction
+                during the session.</p>
+            <p>It is my choice to receive massage, and I give my consent to receive treatment.</p>
+
+
+            <button class="btn btn-primary btn-lg" type="submit" id="submitBtn">Submit</button>
+            </form>
+            <!-- Calendar -->
+            <div class="calendar">
+                <h4 class="mb-3">Check my Availability!</h1>
+                    <div class="iframe-wrapper">
+                        <iframe src="https://calendar.google.com/calendar/embed?src=girthtanin%40gmail.com&amp;ctz=America%2FNew_York" class="cal-iframe"
+                            style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
         <footer class="container">
             <p class="float-right">
                 <a href="#">Back to top</a>
@@ -181,9 +468,17 @@
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
     <script src="./assets/Bootstrap/winmarkltd-BootstrapFormHelpers-d4201db/js/bootstrap-formhelpers-phone.js"></script>
-    <script src="./assets/Bootstrap/winmarkltd-BootstrapFormHelpers-d4201db/js/bootstrap-formhelpers-phone.js"></script>
-    <script src="./assets/javaScript/index.js"></script>
+    <script src="./assets/Bootstrap/winmarkltd-BootstrapFormHelpers-d4201db/js/bootstrap-formhelpers-countries.js"></script>
+    <script src="./assets/Bootstrap/winmarkltd-BootstrapFormHelpers-d4201db/js/bootstrap-formhelpers-states.js"></script>
+    <script src="./assets/Bootstrap/winmarkltd-BootstrapFormHelpers-d4201db/js/lang/en_US/bootstrap-formhelpers-phone.en_US.js"></script>
+    <script src="./assets/Bootstrap/winmarkltd-BootstrapFormHelpers-d4201db/js/lang/en_US/bootstrap-formhelpers-countries.en_US.js"></script>
+    <script src="./assets/Bootstrap/winmarkltd-BootstrapFormHelpers-d4201db/js/lang/en_US/bootstrap-formhelpers-states.en_US.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <!-- <script src="./assets/javaScript/index.js"></script> -->
+    <script src="./assets/javascript/form.js"></script>
 </body>
 
 </html>

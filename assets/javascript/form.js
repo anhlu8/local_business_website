@@ -31,3 +31,16 @@ $(document).ready(function () {
     });
 
 });
+var open =  false
+
+
+
+$("#terms").click(function(){
+    if (open) {
+        $("#slide-open").slideUp();
+        open = !open
+    }else {
+        $("#slide-open").slideDown();
+        open = !open
+    }
+})

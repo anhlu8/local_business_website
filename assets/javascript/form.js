@@ -33,8 +33,6 @@ $(document).ready(function () {
 });
 var open =  false
 
-
-
 $("#terms").click(function(){
     if (open) {
         $("#slide-open").slideUp();

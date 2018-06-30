@@ -67,14 +67,21 @@
           </div>
         </div>
         <hr class="featurette-divider">
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+
+        <!-- This is the part I am working on -->
+
+        <div class="row featurette" id="mapDiv">
+          <div class="col-md-12">
+            <h2 class="featurette-heading">Address & Map: <span ><img id="hand" src="./assets/images/hand-pointing-down-clipart-9.jpg"></span></h2>
           </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
+          <!-- Maps -->
+          <div id="map"></div>
+          <br>
+          <hr>
+
+          <!--  -->
+
+        
         </div>
         <hr class="featurette-divider">
       </div>
@@ -88,5 +95,8 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
     <script src="./assets/javaScript/index.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC78AWM9uqBMDHNJumzCRqGg51fRKH_wjw&callback=initMap">
+    </script>
   </body>
 </html>

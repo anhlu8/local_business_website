@@ -89,3 +89,18 @@ body {
       margin-top: 7rem;
     }
   }
+
+  /*Map Styling*/
+
+#map{
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+#hand{
+  height: 46.67px;
+  width: auto;
+  position: relative;
+  top: 8px;
+}

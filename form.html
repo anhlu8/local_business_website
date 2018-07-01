@@ -55,29 +55,31 @@
             <div class="col-md-8 order-md-1">
                 <form class="needs-validation" novalidate>
                     <h4 class="mb-3">Client Info</h4>
-                    <div class="row">
+
+                    <div class="form-row">
                         <div class="col-md-4 mb-4">
                             <label for="firstName">First name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                            <div class="invalid-feedback">
+                            <input type="text" class="form-control" id="firstName" placeholder="" required>
+                            <div id="customFirst" class="requiredvalidation">
                                 Valid first name is required.
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
                             <label for="lastName">Last name</label>
                             <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                            <div class="invalid-feedback">
+                            <div id="customLast" class="requiredvalidation">
                                 Valid last name is required.
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
                             <label for="dateOfBirth">Date of Birth</label>
                             <input type="date" class="form-control" id="dateOfBirth" placeholder="" value="" required>
-                            <div class="invalid-feedback">
+                            <div id="customDOB" class="requiredvalidation">
                                 Valid date is required.
                             </div>
                         </div>
                     </div>
+                    <!-- This is html -->
                     <div class="row" id="genderRow">
                         <div class="col-md-2">
                             <label>Gender</label>
@@ -104,16 +106,16 @@
                     <div class="row">
                         <div class="col-md-5 mb-3">
                             <label for="phoneNumber">Phone Number</label>
-                            <input type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" placeholder="(123) 456-7890" id="phoneNumber">
-                            <div class="invalid-feedback">
+                            <input type="text" class="form-control bfh-phone" data-format=" (ddd) ddd-dddd" id="phoneNumber" placeholder=" (123) 456-7890">
+                            <div id="phone" class="requiredvalidation">
                                 Valid phone number is required.
                             </div>
                         </div>
                         <div class="col-md-7 mb-3">
                             <label for="emailAdress">Email</label>
                             <input type="email" class="form-control" id="emailAdress" placeholder="you@example.com">
-                            <div class="invalid-feedback">
-                                Please enter a valid email address for shipping updates.
+                            <div id="email" class="requiredvalidation">
+                                Please enter a valid email address.
                             </div>
                         </div>
                     </div>
@@ -153,8 +155,27 @@
                             </div>
                         </div>
                     </div>
-                </form>
             </div>
+
+            <script>
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
 
             <!-- Section 2 -->
             <!--Health Section -->
@@ -165,13 +186,13 @@
                     <label>Have you ever had a therapeutic massage before?</label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question1" class="form-check-input" type="radio" value="yes" id="question1yes">
+                    <input name="question1" class="form-check-input" type="radio" value="yes" id="question1yes">
                     <label class="form-check-label" for="question1yes">
                         Yes
                     </label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question1" class="form-check-input" type="radio" value="no" id="question1no">
+                    <input name="question1" class="form-check-input" type="radio" value="no" id="question1no">
                     <label class="form-check-label" for="question1no">
                         No
                     </label>
@@ -185,13 +206,13 @@
                     <label>Are you currently under the care of a physician?</label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question2" class="form-check-input" type="radio" value="yes" id="question2yes">
+                    <input name="question2" class="form-check-input" type="radio" value="yes" id="question2yes">
                     <label class="form-check-label" for="question2yes">
                         Yes
                     </label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question2" class="form-check-input" type="radio" value="no" id="question2no">
+                    <input name="question2" class="form-check-input" type="radio" value="no" id="question2no">
                     <label class="form-check-label" for="question2no">
                         No
                     </label>
@@ -205,13 +226,13 @@
                     <label>Are you currently taking any medications?</label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question3" class="form-check-input" type="radio" value="yes" id="question3yes">
+                    <input name="question3" class="form-check-input" type="radio" value="yes" id="question3yes">
                     <label class="form-check-label" for="question3yes">
                         Yes
                     </label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question3" class="form-check-input" type="radio" value="no" id="question3no">
+                    <input name="question3" class="form-check-input" type="radio" value="no" id="question3no">
                     <label class="form-check-label" for="question3no">
                         No
                     </label>
@@ -225,13 +246,13 @@
                     <label>Have you had any surgeries?</label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question4" class="form-check-input" type="radio" value="yes" id="question4yes">
+                    <input name="question4" class="form-check-input" type="radio" value="yes" id="question4yes">
                     <label class="form-check-label" for="question4yes">
                         Yes
                     </label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question4" class="form-check-input" type="radio" value="no" id="question4no">
+                    <input name="question4" class="form-check-input" type="radio" value="no" id="question4no">
                     <label class="form-check-label" for="question4no">
                         No
                     </label>
@@ -245,13 +266,13 @@
                     <label>Have you had any injuries or accidents?</label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question5" class="form-check-input" type="radio" value="yes" id="question5yes">
+                    <input name="question5" class="form-check-input" type="radio" value="yes" id="question5yes">
                     <label class="form-check-label" for="question5yes">
                         Yes
                     </label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question5" class="form-check-input" type="radio" value="no" id="question5no">
+                    <input name="question5" class="form-check-input" type="radio" value="no" id="question5no">
                     <label class="form-check-label" for="question5no">
                         No
                     </label>
@@ -265,13 +286,13 @@
                     <label>Are you pregnant or trying to become pregnant?</label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question6" class="form-check-input" type="radio" value="yes" id="question6yes">
+                    <input name="question6" class="form-check-input" type="radio" value="yes" id="question6yes">
                     <label class="form-check-label" for="question6yes">
                         Yes
                     </label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
-                    <input name = "question6" class="form-check-input" type="radio" value="no" id="question6no">
+                    <input name="question6" class="form-check-input" type="radio" value="no" id="question6no">
                     <label class="form-check-label" for="question6no">
                         No
                     </label>
@@ -281,135 +302,134 @@
                 </div>
             </div>
             <div>
-                <form method="get" action="projects.php" role="form">
-                    <input type="hidden" name="action" value="projectsFind">
+                <input type="hidden" name="action" value="projectsFind">
 
-                    <div class="form-group row">
-                        <label class="col-md-12 col-form-label">In order to provide you with appropriate and client centered massage, we need an accurate health
-                            history. Please check any boxes below that apply to you.</label>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2">Selections</div>
-                        <div class="col-sm-10">
-                            <div class="form-check form-check-inline">
-                                <input  type="checkbox"  id="selAllergies" />
-                                <label class="form-check-label" >
-                                    Allergies </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selArthritis">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Arthritis</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selBloodClots">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Blood clots (DVT, phlebitis) </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selCancerTumors">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Cancer or tumors </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selHeartFailure">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Congestive heart failure </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selDiabetes">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Diabetes</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selFibromyalgia">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Fibromyalgia </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selHeartAttack">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Heart attack </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selHighBloodPressure">
-                                <label class="form-check-label" for="gridCheck1">
-                                    High blood pressure </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selImmuneSystem">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Immune system deficiency </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selInfectiousDisease">
-                                <label class="form-check-label" for="gridCheck1">
-                                    infectious disease </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selKidneyUrinary">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Kidney/urinary problem </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selNumbnessTingling">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Numbness or tingling</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selOsteoporosis">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Osteoporosis </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selOthercardiovascular">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Other cardiovascular disease </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selRespiratory">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Respiratory problems </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selSkinConditions">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Skin conditions </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selStroke">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Stroke </label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="footTypes[]" id="selOthers">
-                                <label class="form-check-label" for="gridCheck1">
-                                    Other conditions </label>
-                            </div>
-                            <div class=" col-md-12">
-                                <textarea class="form-control" id="otherConditionsText" rows="2" placeholder="Please explain"></textarea>
-                            </div>
-
+                <div class="form-group row">
+                    <label class="col-md-12 col-form-label">In order to provide you with appropriate and client centered massage, we need an accurate health history.
+                        Please check any boxes below that apply to you.</label>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">Selections</div>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="selAllergies" />
+                            <label class="form-check-label">
+                                Allergies </label>
                         </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selArthritis">
+                            <label class="form-check-label" for="gridCheck1">
+                                Arthritis</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selBloodClots">
+                            <label class="form-check-label" for="gridCheck1">
+                                Blood clots (DVT, phlebitis) </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selCancerTumors">
+                            <label class="form-check-label" for="gridCheck1">
+                                Cancer or tumors </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selHeartFailure">
+                            <label class="form-check-label" for="gridCheck1">
+                                Congestive heart failure </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selDiabetes">
+                            <label class="form-check-label" for="gridCheck1">
+                                Diabetes</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selFibromyalgia">
+                            <label class="form-check-label" for="gridCheck1">
+                                Fibromyalgia </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selHeartAttack">
+                            <label class="form-check-label" for="gridCheck1">
+                                Heart attack </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selHighBloodPressure">
+                            <label class="form-check-label" for="gridCheck1">
+                                High blood pressure </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selImmuneSystem">
+                            <label class="form-check-label" for="gridCheck1">
+                                Immune system deficiency </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selInfectiousDisease">
+                            <label class="form-check-label" for="gridCheck1">
+                                infectious disease </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selKidneyUrinary">
+                            <label class="form-check-label" for="gridCheck1">
+                                Kidney/urinary problem </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selNumbnessTingling">
+                            <label class="form-check-label" for="gridCheck1">
+                                Numbness or tingling</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selOsteoporosis">
+                            <label class="form-check-label" for="gridCheck1">
+                                Osteoporosis </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selOthercardiovascular">
+                            <label class="form-check-label" for="gridCheck1">
+                                Other cardiovascular disease </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selRespiratory">
+                            <label class="form-check-label" for="gridCheck1">
+                                Respiratory problems </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selSkinConditions">
+                            <label class="form-check-label" for="gridCheck1">
+                                Skin conditions </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selStroke">
+                            <label class="form-check-label" for="gridCheck1">
+                                Stroke </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selOthers">
+                            <label class="form-check-label" for="gridCheck1">
+                                Other conditions </label>
+                        </div>
+                        <div class=" col-md-12">
+                            <textarea class="form-control" id="otherConditionsText" rows="2" placeholder="Please explain"></textarea>
+                        </div>
+
                     </div>
+                </div>
 
 
             </div>

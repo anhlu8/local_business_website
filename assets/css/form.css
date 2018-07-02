@@ -22,3 +22,7 @@
     width: 250px;
   }
 
+.requiredvalidation{
+    color:red;
+    font-size: 12px;
+}

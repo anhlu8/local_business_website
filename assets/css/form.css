@@ -17,3 +17,9 @@
     height: 100%;
     border: 0;
 }
+
+  #footer {
+    height: 3.5rem;
+    padding: 1rem; 
+
+  }

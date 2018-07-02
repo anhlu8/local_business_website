@@ -22,6 +22,15 @@
     width: 250px;
   }
 
+#slide-open {
+    display: none;
+}
+#terms {
+    margin-bottom: 3%;
+    margin-top: 3%;
+    font-size: 20px;
+    text-decoration: underline 
+
 .requiredvalidation{
     color:red;
     font-size: 12px;

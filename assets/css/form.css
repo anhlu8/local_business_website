@@ -18,8 +18,11 @@
     border: 0;
 }
 
-  #footer {
-    height: 3.5rem;
-    padding: 1rem; 
-
+.form-check-inline {
+    width: 250px;
   }
+
+.requiredvalidation{
+    color:red;
+    font-size: 12px;
+}

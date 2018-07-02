@@ -18,7 +18,17 @@
     border: 0;
 }
 
+<<<<<<< HEAD
 #footer {
     padding: 1rem; 
 
+=======
+.form-check-inline {
+    width: 250px;
+>>>>>>> f1a0d761dbb9d5d1fa4db297d3bf7514ab224fdb
   }
+
+.requiredvalidation{
+    color:red;
+    font-size: 12px;
+}

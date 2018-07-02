@@ -1,4 +1,5 @@
 
+
 $.ajax({
     method: 'get',
     url: 'https://obscure-peak-76264.herokuapp.com/yelp',
@@ -73,8 +74,8 @@ function initMap(){
 }
 
 // Code Ends Here
-
-
-
-
+var a = document.createElement("script")
+a.setAttribute("src", `https://maps.googleapis.com/maps/api/js?key=${localStorage.getItem('key')}&callback=initMap`)
+a.setAttribute("async", "defer");
+document.body.appendChild(a);
 

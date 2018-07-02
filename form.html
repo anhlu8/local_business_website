@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #4e2a10">
             <a class="navbar-brand" href="#">Living Water Massage</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -22,12 +22,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="./index.html">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="./form.html">Intake Form</a>
                     </li>
                 </ul>
@@ -41,9 +41,9 @@
                 <div class="carousel-item active">
                     <!-- <img class="first-slide" src="<ImAGE HERE>" alt="First slide"> -->
                     <div class="container">
-                        <div class="carousel-caption text-left">
+                        <div class="carousel-caption text-center">
                             <h1>Schedule an Appointment.</h1>
-                            <p>We're excited to see you!</p>
+                            <p>We're excited to see you! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,6 @@
             <div class="col-md-8 order-md-1">
                 <form class="needs-validation" novalidate>
                     <h4 class="mb-3">Client Info</h4>
-
                     <div class="form-row">
                         <div class="col-md-4 mb-4">
                             <label for="firstName">First name</label>
@@ -106,6 +105,7 @@
                     <div class="row">
                         <div class="col-md-5 mb-3">
                             <label for="phoneNumber">Phone Number</label>
+
                             <input type="text" class="form-control bfh-phone" data-format=" (ddd) ddd-dddd" id="phoneNumber" placeholder=" (123) 456-7890">
                             <div id="phone" class="requiredvalidation">
                                 Valid phone number is required.
@@ -114,6 +114,7 @@
                         <div class="col-md-7 mb-3">
                             <label for="emailAdress">Email</label>
                             <input type="email" class="form-control" id="emailAdress" placeholder="you@example.com">
+
                             <div id="email" class="requiredvalidation">
                                 Please enter a valid email address.
                             </div>
@@ -156,27 +157,6 @@
                         </div>
                     </div>
             </div>
-
-            <script>
-                (function () {
-                    'use strict';
-                    window.addEventListener('load', function () {
-                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                        var forms = document.getElementsByClassName('needs-validation');
-                        // Loop over them and prevent submission
-                        var validation = Array.prototype.filter.call(forms, function (form) {
-                            form.addEventListener('submit', function (event) {
-                                if (form.checkValidity() === false) {
-                                    event.preventDefault();
-                                    event.stopPropagation();
-                                }
-                                form.classList.add('was-validated');
-                            }, false);
-                        });
-                    }, false);
-                })();
-            </script>
-
             <!-- Section 2 -->
             <!--Health Section -->
             <hr class="mb-4">
@@ -186,6 +166,7 @@
                     <label>Have you ever had a therapeutic massage before?</label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
+
                     <input name="question1" class="form-check-input" type="radio" value="yes" id="question1yes">
                     <label class="form-check-label" for="question1yes">
                         Yes
@@ -212,233 +193,14 @@
                     </label>
                 </div>
                 <div class="form-check col-md-1 mb-1">
+
                     <input name="question2" class="form-check-input" type="radio" value="no" id="question2no">
                     <label class="form-check-label" for="question2no">
                         No
                     </label>
                 </div>
                 <div class="form-group col-md-4">
-                    <textarea class="form-control" id="question2text" rows="2" placeholder="Please explain"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label>Are you currently taking any medications?</label>
-                </div>
-                <div class="form-check col-md-1 mb-1">
-                    <input name="question3" class="form-check-input" type="radio" value="yes" id="question3yes">
-                    <label class="form-check-label" for="question3yes">
-                        Yes
-                    </label>
-                </div>
-                <div class="form-check col-md-1 mb-1">
-                    <input name="question3" class="form-check-input" type="radio" value="no" id="question3no">
-                    <label class="form-check-label" for="question3no">
-                        No
-                    </label>
-                </div>
-                <div class="form-group col-md-4">
-                    <textarea class="form-control" id="question3text" rows="2" placeholder="List current medications"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label>Have you had any surgeries?</label>
-                </div>
-                <div class="form-check col-md-1 mb-1">
-                    <input name="question4" class="form-check-input" type="radio" value="yes" id="question4yes">
-                    <label class="form-check-label" for="question4yes">
-                        Yes
-                    </label>
-                </div>
-                <div class="form-check col-md-1 mb-1">
-                    <input name="question4" class="form-check-input" type="radio" value="no" id="question4no">
-                    <label class="form-check-label" for="question4no">
-                        No
-                    </label>
-                </div>
-                <div class="form-group col-md-4">
-                    <textarea class="form-control" id="question4text" rows="2" placeholder="Please describe"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label>Have you had any injuries or accidents?</label>
-                </div>
-                <div class="form-check col-md-1 mb-1">
-                    <input name="question5" class="form-check-input" type="radio" value="yes" id="question5yes">
-                    <label class="form-check-label" for="question5yes">
-                        Yes
-                    </label>
-                </div>
-                <div class="form-check col-md-1 mb-1">
-                    <input name="question5" class="form-check-input" type="radio" value="no" id="question5no">
-                    <label class="form-check-label" for="question5no">
-                        No
-                    </label>
-                </div>
-                <div class="form-group col-md-4">
-                    <textarea class="form-control" id="question5text" rows="2" placeholder="Please describe"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label>Are you pregnant or trying to become pregnant?</label>
-                </div>
-                <div class="form-check col-md-1 mb-1">
-                    <input name="question6" class="form-check-input" type="radio" value="yes" id="question6yes">
-                    <label class="form-check-label" for="question6yes">
-                        Yes
-                    </label>
-                </div>
-                <div class="form-check col-md-1 mb-1">
-                    <input name="question6" class="form-check-input" type="radio" value="no" id="question6no">
-                    <label class="form-check-label" for="question6no">
-                        No
-                    </label>
-                </div>
-                <div class="form-group col-md-4">
-                    <textarea class="form-control" id="question6text" rows="2" placeholder="Which trimester and any associated conditions?"></textarea>
-                </div>
-            </div>
-            <div>
-                <input type="hidden" name="action" value="projectsFind">
 
-                <div class="form-group row">
-                    <label class="col-md-12 col-form-label">In order to provide you with appropriate and client centered massage, we need an accurate health history.
-                        Please check any boxes below that apply to you.</label>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-2">Selections</div>
-                    <div class="col-sm-10">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="selAllergies" />
-                            <label class="form-check-label">
-                                Allergies </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selArthritis">
-                            <label class="form-check-label" for="gridCheck1">
-                                Arthritis</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selBloodClots">
-                            <label class="form-check-label" for="gridCheck1">
-                                Blood clots (DVT, phlebitis) </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selCancerTumors">
-                            <label class="form-check-label" for="gridCheck1">
-                                Cancer or tumors </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selHeartFailure">
-                            <label class="form-check-label" for="gridCheck1">
-                                Congestive heart failure </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selDiabetes">
-                            <label class="form-check-label" for="gridCheck1">
-                                Diabetes</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selFibromyalgia">
-                            <label class="form-check-label" for="gridCheck1">
-                                Fibromyalgia </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selHeartAttack">
-                            <label class="form-check-label" for="gridCheck1">
-                                Heart attack </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selHighBloodPressure">
-                            <label class="form-check-label" for="gridCheck1">
-                                High blood pressure </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selImmuneSystem">
-                            <label class="form-check-label" for="gridCheck1">
-                                Immune system deficiency </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selInfectiousDisease">
-                            <label class="form-check-label" for="gridCheck1">
-                                infectious disease </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selKidneyUrinary">
-                            <label class="form-check-label" for="gridCheck1">
-                                Kidney/urinary problem </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selNumbnessTingling">
-                            <label class="form-check-label" for="gridCheck1">
-                                Numbness or tingling</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selOsteoporosis">
-                            <label class="form-check-label" for="gridCheck1">
-                                Osteoporosis </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selOthercardiovascular">
-                            <label class="form-check-label" for="gridCheck1">
-                                Other cardiovascular disease </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selRespiratory">
-                            <label class="form-check-label" for="gridCheck1">
-                                Respiratory problems </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selSkinConditions">
-                            <label class="form-check-label" for="gridCheck1">
-                                Skin conditions </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selStroke">
-                            <label class="form-check-label" for="gridCheck1">
-                                Stroke </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="footTypes[]" id="selOthers">
-                            <label class="form-check-label" for="gridCheck1">
-                                Other conditions </label>
-                        </div>
-                        <div class=" col-md-12">
-                            <textarea class="form-control" id="otherConditionsText" rows="2" placeholder="Please explain"></textarea>
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div>
-            <hr class="mb-4">
-            <p>I hereby acknowledge that all of the above information is correct and that if I have any changes in my health
-                I will let my practitioner know.</p>
-            <p>The massage/bodywork received today is provided for the purpose of relaxation and relief of muscular tension
-                and that a written doctor’s referral is required to practice on individuals with any acute or complex medical
-                conditions.
             </p>
             <p>Your therapist is permitted to receive gratuity beyond full payment of services provided.</p>
             <p>Living Water Massage reserves the right to refuse massage treatment to any individual for any reason, including
@@ -476,15 +238,10 @@
         </div>
 
         <!-- Footer -->
-        <footer class="container">
-            <p class="float-right">
-                <a href="#">Back to top</a>
-            </p>
-            <p>&copy; 2017-2018 Company, Inc. &middot;
-                <a href="#">Privacy</a> &middot;
-                <a href="#">Terms</a>
-            </p>
-        </footer>
+        <footer class="container" style="background-color: #4e2a10; color: #fff;" id="  footer">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>Content &copy; 2018. Living Water Massage. All rights reserved.</p>
+          </footer>
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>

@@ -33,6 +33,7 @@ body {
     left: 0;
     min-width: 100%;
     height: 32rem;
+    opacity: 0.5;
   }
   
   #footer{

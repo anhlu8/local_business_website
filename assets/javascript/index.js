@@ -49,7 +49,7 @@ function initMap(){
 
     // Adding Info window on click Effect
     var infoWindow = new google.maps.InfoWindow({
-        content: '<h4>1523, S 15th St, Philadelphia, PA 191146</h4>'
+        content: '<h4>1523, S 15th St, Philadelphia, PA 19146</h4>'
     });
 
     $("#map").addClass("rounded-circle");

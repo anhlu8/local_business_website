@@ -5,4 +5,5 @@ $('#addApi').on("click", function(){
      console.log(key)
      localStorage.setItem("key", key);
      console.log(localStorage.getItem("key"))
+     window.location.href = "./index.html"
 })
